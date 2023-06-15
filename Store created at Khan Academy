@@ -1,16 +1,23 @@
 CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, brand TEXT, price INTEGER, quantity INTEGER);
 
-INSERT INTO store VALUES (1, "blouse", "zara", 68, 15);
+INSERT INTO store VALUES (1, "blouse", "Zara", 68, 15);
 INSERT INTO store VALUES (2, "shirt", "vans", 29, 20);
 INSERT INTO Store VALUES (3, "shorts", "vans", 49, 18);
-INSERT INTO store VALUES (4, "pants","levi", 65, 20);
-INSERT INTO store VALUES (5, "socks", "adidas", 8, 35);
-INSERT INTO store VALUES(6, "dress", "zara", 120, 9);
-INSERT INTO store VALUES (7, "snickers", "nike", 180, 12);
-INSERT INTO store VALUES (8, "soccer shoes", "nike", 140, 8);
+INSERT INTO store VALUES (4, "pants", "Levi", 65, 20);
+INSERT INTO store VALUES (5, "socks", "Adidas", 8, 35);
+INSERT INTO store VALUES(6, "dress", "Zara", 120, 9);
+INSERT INTO store VALUES (7, "Snickers", "Nike", 180, 12);
+INSERT INTO store VALUES (8, "soccer shoes", "Nike", 140, 8);
 INSERT INTO store VALUES (9, "hat", "new era", 30, 27);
-INSERT INTO Store VALUES (10, "glasses" , "ray ban", 135, 14):
-INSERT INTO store VALUES (11, "ear rings", "tiffany", 425, 4);
+INSERT INTO Store VALUES (10, "glasses", "ray ban", 135, 14):
+INSERT INTO store VALUES (11, "earrings", "Tiffany", 425, 4);
 INSERT INTO store VALUES (12, "purse", "michael kors", 220, 7);
-INSERT INTO store VALUES (13, "underwear", "victoria secret", 25, 36);
-16 INSERT INTO store VALUES (14, "bras", "victoria secret", 48, 22);
+INSERT INTO store VALUES (13, "underwear", "Victoria's Secret", 25, 36);
+INSERT INTO store VALUES (14, "bras", "Victoria's Secret", 48, 22);
+INSERT INTO store VALUES (15, "hair band", "Nike", 5, 35);
+
+SELECT * FROM store;
+SELECT * From store ORDER BY price;
+SELECT SUM(quantity) FROM store;
+SELECT MAX(quantity) FROM store;
+SELECT brand, SUM(price) FROM store GROUP BY quantity
