@@ -1,3 +1,5 @@
+-- Create a store database
+
 CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, brand TEXT, price INTEGER, quantity INTEGER);
 
 INSERT INTO store VALUES (1, "blouse", "Zara", 68, 15);
@@ -16,8 +18,24 @@ INSERT INTO store VALUES (13, "underwear", "Victoria's Secret", 25, 36);
 INSERT INTO store VALUES (14, "bras", "Victoria's Secret", 48, 22);
 INSERT INTO store VALUES (15, "hair band", "Nike", 5, 35);
 
+
+-- display database
 SELECT * FROM store;
+
+--display database order on the price
 SELECT * From store ORDER BY price;
+
+-- What is the total number of products?
 SELECT SUM(quantity) FROM store;
+
+--display the quantity of the higher product number.
 SELECT MAX(quantity) FROM store;
-SELECT brand, SUM(price) FROM store GROUP BY quantity
+
+-display the brand and price of the product
+SELECT brand, price FROM store GROUP BY quantity;
+
+--What is the average price?
+SELECT AVG(price) FROM store;
+
+-- What are the 5 most popular items?
+SELECT name, price, popularity FROM store order by popularity desc limit 5; 
