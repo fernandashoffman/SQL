@@ -1,0 +1,54 @@
+/* Create table about the people and what they do here */
+/*the info in this table is not close to the reality info about those people*/
+
+CREATE TABLE famous (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER);
+    
+INSERT INTO famous (fullname, age) VALUES ("Miley Cyrus", "29");
+INSERT INTO famous (fullname, age) VALUES ("Justin Beaber", "27");
+INSERT INTO famous (fullname, age) VALUES ("daniel radcliff", "32");
+INSERT INTO famous (fullname, age) VALUES ("Leonardo DiCaprio", "45");
+INSERT INTO famous (fullname, age) VALUES ("Colleen Hoover", "38");
+INSERT INTO famous (fullname, age) VALUES ("J.K. Rowling", "50");
+INSERT INTO famous (fullname, age) VALUES ("Dr. Seuss", "90");
+
+
+CREATE TABLE career (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    name TEXT);
+
+
+INSERT INTO career (person_id, name) VALUES ("1", "singer");
+INSERT INTO career (person_id, name) VALUES ("2", "singer");
+INSERT INTO career (person_id, name) VALUES ("3", "actor");
+INSERT INTO career (person_id, name) VALUES ("4", "actor");
+INSERT INTO career (person_id, name) VALUES ("5", "author");
+INSERT INTO career (person_id, name) VALUES ("6", "author");INSERT INTO career (person_id, name) VALUES ("7", "author");
+
+CREATE TABLE project (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    p_id INTEGER,
+    p_name TEXT);
+
+
+INSERT INTO project (p_id, p_name) VALUES ("1","wreacking ball");
+INSERT INTO project (p_id, p_name) VALUES ("2","baby");
+INSERT INTO project (p_id, p_name) VALUES ("3","harry potter");
+INSERT INTO project (p_id, p_name) VALUES ("4","catch me if you can");
+INSERT INTO project (p_id, p_name) VALUES ("5","is ends with us");
+INSERT INTO project (p_id, p_name) VALUES ("6","harry potter");
+INSERT INTO project (p_id, p_name) VALUES ("7", "Oh, the Places You’ll Go!");
+
+SELECT famous.fullname, career.name, project.p_name 
+    FROM famous 
+        JOIN career
+            ON famous.id =career.person_id
+        JOIN project
+            ON famous.id = project.p_id
+
+
+            
+
